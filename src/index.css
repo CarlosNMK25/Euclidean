@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-idm-bg: #f5f5f5;
+  --color-idm-ink: #1a1a1a;
+  --color-idm-muted: #d1d1d1;
+  --color-system-accent: #f97316;
+  
+  --color-track-kick: #166534;
+  --color-track-snare: #9D174D;
+  --color-track-hat: #155E75;
+  --color-track-cloud: #5B21B6;
+}
+
+body {
+  background-color: var(--color-idm-bg);
+  color: var(--color-idm-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(26, 26, 26, 0.1);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 26, 26, 0.2);
+}
+
+/* High-performance step highlighting (Light Theme) */
+.step-container.is-current-step .step-box {
+  transform: scale(1.15);
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+  border-color: var(--color-system-accent) !important;
+  border-width: 2px;
+}
+
+.step-container.is-current-step[data-active="true"] .step-box {
+  filter: brightness(0.9); /* Subtle stand out on light bg */
+  box-shadow: 0 0 20px currentColor;
+  border-color: white !important;
+}
+
+.step-container {
+  transition: transform 0.1s ease-out;
+}
+
+.step-box {
+  transition: transform 0.1s ease-out, background-color 0.1s ease-out, box-shadow 0.1s ease-out, border-color 0.1s ease-out;
+}

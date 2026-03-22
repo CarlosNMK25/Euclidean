@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Euclidean IDM Machine Versión 2",
+  "description": "A generative Euclidean sequencer for experimental IDM rhythms using Tone.js and Bjorklund\u0027s algorithm.",
+  "requestFramePermissions": []
+}
